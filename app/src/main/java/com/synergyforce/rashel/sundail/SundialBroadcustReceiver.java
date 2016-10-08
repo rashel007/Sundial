@@ -4,10 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
-import android.os.Bundle;
 import android.os.Vibrator;
-
-import java.io.Serializable;
 
 /**
  * @author Estique Ahmed Rashel
@@ -26,7 +23,7 @@ public class SundialBroadcustReceiver extends BroadcastReceiver {
         v.vibrate(500);
 
         //setting the end time
-        Constants.END_TIME = Uitls.getTheCurrentDateAndTime();
+        Constants.END_TIME = Utils.getTheCurrentDateAndTime();
 
         // start TimeEndActivity
         Intent mIntent = new Intent(context, TimeEndActivity.class);

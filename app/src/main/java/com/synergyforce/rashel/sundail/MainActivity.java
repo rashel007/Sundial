@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -15,10 +14,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -104,7 +101,7 @@ public class MainActivity extends Activity {
                     Constants.ALARMMANAGER_STARTED = true;
 
                     //setting the started time
-                    Constants.START_TIME = Uitls.getTheCurrentDateAndTime();
+                    Constants.START_TIME = Utils.getTheCurrentDateAndTime();
 
                 }else{
                     //if a glass clock is already started , toast a message to user about it.

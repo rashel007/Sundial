@@ -1,8 +1,11 @@
 package com.synergyforce.rashel.sundail;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.TextView;
 
 /**
@@ -12,15 +15,18 @@ import android.widget.TextView;
 public class TimeEndActivity extends Activity {
 
     TextView tvSetStartTime, tvSetEndTime;
+    Button btnStartNewGlassClock;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.time_end_layout);
-        openMainActivityFromSleep();
-        setStartAndEndTime();
 
+        //calling private functions
+        openMainActivityFromSleep();
+        showStartAndEndTime();
+        startNewGlassClock();
 
     }
 
@@ -28,12 +34,28 @@ public class TimeEndActivity extends Activity {
      * TimeEndActivity private function
      * this function will set the start and end time in the user UI
      */
-    private void setStartAndEndTime(){
+    private void showStartAndEndTime(){
         tvSetStartTime = (TextView) findViewById(R.id.started);
         tvSetEndTime = (TextView) findViewById(R.id.ends);
 
         tvSetStartTime.setText(Constants.START_TIME);
         tvSetEndTime.setText(Constants.END_TIME);
+    }
+
+    private void startNewGlassClock(){
+        btnStartNewGlassClock = (Button) findViewById(R.id.startNewGlassClock);
+        btnStartNewGlassClock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TimeEndActivity.this, MainActivity.class);
+                startActivity(intent);
+
+                // settings the defaults values of start and end time
+                Utils.setDefaultsValues();
+
+                finish();
+            }
+        });
     }
 
 
@@ -51,5 +73,11 @@ public class TimeEndActivity extends Activity {
         }
     }
 
-
+    // if the user press the back button, application will be closed
+    @Override
+    public void onBackPressed() {
+        finish();
+        //setting the default values of start and and time
+        Utils.setDefaultsValues();
+    }
 }
