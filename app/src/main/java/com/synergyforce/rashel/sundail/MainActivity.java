@@ -113,15 +113,15 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 //check if the glass clock is already started ot not
                 if(!Constants.ALARMMANAGER_STARTED) {
+                    //setting the started time
+                    Constants.START_TIME = Utils.getTheCurrentDateAndTime();
                     //if glass clock is'nt started , then start the glass clock
                     startAlarmManager();
-
                     //starting the progress bar
                     startProgressbar();
 
                     Constants.ALARMMANAGER_STARTED = true;
-                    //setting the started time
-                    Constants.START_TIME = Utils.getTheCurrentDateAndTime();
+
 
                 }else{
                     //if a glass clock is already started , toast a message to user about it.
