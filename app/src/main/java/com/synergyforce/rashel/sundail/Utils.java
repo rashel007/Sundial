@@ -3,7 +3,8 @@ package com.synergyforce.rashel.sundail;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
+
+import static com.synergyforce.rashel.sundail.Constants.APP_CLOSED;
 
 /**
  * @author Estique Ahmed Rashel
@@ -28,5 +29,9 @@ public class Utils {
         Constants.START_TIME = "";
         Constants.END_TIME = "";
         Constants.ALARMMANAGER_STARTED = false;
+        Constants.APP_CLOSED = false;
+
+        Constants.ProgressBarDuration = 0;
+        Constants.ProgressBarProgress = 0;
     }
 }

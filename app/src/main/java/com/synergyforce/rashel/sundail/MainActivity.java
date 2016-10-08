@@ -1,15 +1,20 @@
 package com.synergyforce.rashel.sundail;
 
+import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,6 +34,8 @@ public class MainActivity extends Activity {
     Spinner spinnerSetTime;
     String stEndTime;
     Button btnStartGlassClock;
+    ProgressBar progressBar;
+    ObjectAnimator animation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +45,16 @@ public class MainActivity extends Activity {
         setMainScreenHeader();
         setEndTime();
         startButton();
+    }
+
+    @Override
+    public void onBackPressed() {
+        MainActivity.this.finish();
+        if(!Constants.APP_CLOSED && Constants.ALARMMANAGER_STARTED) {
+            progressBar.clearAnimation();
+            Constants.APP_CLOSED = true;
+        }
+
     }
 
     /**
@@ -98,6 +115,10 @@ public class MainActivity extends Activity {
                 if(!Constants.ALARMMANAGER_STARTED) {
                     //if glass clock is'nt started , then start the glass clock
                     startAlarmManager();
+
+                    //starting the progress bar
+                    startProgressbar();
+
                     Constants.ALARMMANAGER_STARTED = true;
                     //setting the started time
                     Constants.START_TIME = Utils.getTheCurrentDateAndTime();
@@ -116,12 +137,30 @@ public class MainActivity extends Activity {
      * it will show the time counts
      */
     private void startProgressbar(){
+        progressBar = (ProgressBar)findViewById(R.id.progressBar);
+        progressBar.setVisibility(View.VISIBLE);
+        //setting different setProgressDrawable according to api level
+        if(Build.VERSION.SDK_INT < 21){
+            progressBar.setProgressDrawable(ContextCompat.getDrawable( this, R.drawable.circle_pre_lollipop));
+        }
+        if(Build.VERSION.SDK_INT >= 21){
+            progressBar.setProgressDrawable(ContextCompat.getDrawable(this, R.drawable.circle_lollipop_and_greater));
 
+        }
+
+        animation = ObjectAnimator.ofInt (progressBar, "progress",
+                0, 500);
+        //converting the end time into milliseconds. 1m = 60000 mils
+        Constants.ProgressBarDuration = Integer.parseInt(stEndTime)*60000;
+
+        animation.setDuration (Constants.ProgressBarDuration);
+        animation.setInterpolator (new DecelerateInterpolator());
+        animation.start ();
     }
 
 
     /**
-     * Mian Activity private method
+     * Main Activity private method
      * this will start the alarm manager
      */
     private void startAlarmManager(){

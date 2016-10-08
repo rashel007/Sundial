@@ -106,6 +106,8 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/startGlassClock"
         android:progress="0"
+        android:max="500"
+        android:visibility="gone"
         />
 
 </RelativeLayout>
