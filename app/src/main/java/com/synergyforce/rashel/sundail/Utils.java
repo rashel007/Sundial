@@ -1,6 +1,8 @@
 package com.synergyforce.rashel.sundail;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -13,9 +15,9 @@ public class Utils {
      * this will return the current date and time
      */
     public static String getTheCurrentDateAndTime(){
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss");
-        String currentDateandTime = sdf.format(new Date());
-        return currentDateandTime;
+        DateFormat df = new SimpleDateFormat("EEE, d MMM yyyy, HH:mm");
+        String date = df.format(Calendar.getInstance().getTime());
+        return date;
     }
 
     /**
@@ -24,5 +26,6 @@ public class Utils {
     public static void setDefaultsValues(){
         Constants.START_TIME = "";
         Constants.END_TIME = "";
+        Constants.ALARMMANAGER_STARTED = false;
     }
 }

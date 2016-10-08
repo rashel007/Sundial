@@ -129,7 +129,7 @@ public class MainActivity extends Activity {
         alarmManager.set(AlarmManager.RTC, cal.getTimeInMillis(), pendingIntent);
 
         MainActivity.this.finish();
-        Toast.makeText(MainActivity.this, " Glass Click Started", Toast.LENGTH_SHORT).show();
+        Toast.makeText(MainActivity.this, " Glass Clock Started", Toast.LENGTH_SHORT).show();
     }
 
 
