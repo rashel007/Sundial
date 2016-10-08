@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Vibrator;
 
+import static com.synergyforce.rashel.sundail.Constants.v;
+
 /**
  * @author Estique Ahmed Rashel
  */
@@ -19,8 +21,9 @@ public class SundialBroadcustReceiver extends BroadcastReceiver {
 
 
         //start alarm
-        Vibrator v = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
-        v.vibrate(500);
+        long[] pattern = {0, 100, 1000, 300, 200, 100, 500, 200, 100};
+        Constants.v = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
+        v.vibrate(pattern,-1);
 
         //setting the end time
         Constants.END_TIME = Utils.getTheCurrentDateAndTime();

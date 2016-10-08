@@ -24,6 +24,7 @@ public class Utils {
 
     /**
      * public function of Utils
+     * this will set default static values
      */
     public static void setDefaultsValues(){
         Constants.START_TIME = "";
