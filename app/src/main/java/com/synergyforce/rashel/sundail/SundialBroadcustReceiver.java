@@ -29,11 +29,12 @@ public class SundialBroadcustReceiver extends BroadcastReceiver {
         Intent mIntent = new Intent(context, TimeEndActivity.class);
         mIntent.putExtra(WAKE, true);
         mIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        mIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         context.startActivity(mIntent);
 
         //start tone
-//        mp = MediaPlayer.create(context, R.raw.my_tone);
-//        mp.start();
+        mp = MediaPlayer.create(context, R.raw.tone);
+        mp.start();
 
 
     }
