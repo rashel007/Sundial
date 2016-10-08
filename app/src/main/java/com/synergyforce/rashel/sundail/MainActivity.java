@@ -99,7 +99,6 @@ public class MainActivity extends Activity {
                     //if glass clock is'nt started , then start the glass clock
                     startAlarmManager();
                     Constants.ALARMMANAGER_STARTED = true;
-
                     //setting the started time
                     Constants.START_TIME = Utils.getTheCurrentDateAndTime();
 
@@ -109,6 +108,15 @@ public class MainActivity extends Activity {
                 }
             }
         });
+    }
+
+    /**
+     * MainActivity private function
+     * this function will start progress bar when the user start the glass clock
+     * it will show the time counts
+     */
+    private void startProgressbar(){
+
     }
 
 
@@ -128,9 +136,11 @@ public class MainActivity extends Activity {
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
         alarmManager.set(AlarmManager.RTC, cal.getTimeInMillis(), pendingIntent);
 
-        MainActivity.this.finish();
         Toast.makeText(MainActivity.this, " Glass Clock Started", Toast.LENGTH_SHORT).show();
     }
+
+
+
 
 
 

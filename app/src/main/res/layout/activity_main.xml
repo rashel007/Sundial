@@ -97,4 +97,15 @@
         android:layout_below="@id/tlStartTime"
         android:textStyle="bold"/>
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/startGlassClock"
+        android:progress="0"
+        />
+
 </RelativeLayout>
