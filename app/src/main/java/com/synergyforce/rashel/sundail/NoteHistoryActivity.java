@@ -15,7 +15,7 @@ import io.realm.Realm;
 import io.realm.RealmResults;
 
 /**
- * Created by Rashel on 10/10/2016.
+ * @author Estique Ahmed Rashel
  */
 
 public class NoteHistoryActivity extends Activity {
@@ -75,35 +75,35 @@ public class NoteHistoryActivity extends Activity {
 
         HistoryModel note = new HistoryModel();
         note.set_id(10);
-        note.set_startTime("Reto Meier");
+        note.set_startTime("Reto Meier 1");
         note.set_endTime("Reto Meier");
         note.set_note("http://api.androidhive.info/images/realm/1.png");
         notes.add(note);
 
         note = new HistoryModel();
         note.set_id(20);
-        note.set_startTime("Reto Meier");
+        note.set_startTime("Reto Meier 2");
         note.set_endTime("Reto Meier");
         note.set_note("http://api.androidhive.info/images/realm/1.png");
         notes.add(note);
 
         note = new HistoryModel();
         note.set_id(30);
-        note.set_startTime("Reto Meier");
+        note.set_startTime("Reto Meier 3");
         note.set_endTime("Reto Meier");
         note.set_note("http://api.androidhive.info/images/realm/1.png");
         notes.add(note);
 
         note = new HistoryModel();
         note.set_id(40);
-        note.set_startTime("Reto Meier");
+        note.set_startTime("Reto Meier 4");
         note.set_endTime("Reto Meier");
         note.set_note("http://api.androidhive.info/images/realm/1.png");
         notes.add(note);
 
         note = new HistoryModel();
         note.set_id(50);
-        note.set_startTime("Reto Meier");
+        note.set_startTime("Reto Meier 5");
         note.set_endTime("Reto Meier");
         note.set_note("http://api.androidhive.info/images/realm/1.png");
         notes.add(note);
@@ -111,7 +111,7 @@ public class NoteHistoryActivity extends Activity {
         for (HistoryModel b : notes) {
             // Persist your data easily
             realm.beginTransaction();
-            realm.copyToRealm(b);
+            realm.copyToRealmOrUpdate(b);
             realm.commitTransaction();
         }
     }
