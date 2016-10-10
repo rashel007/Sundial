@@ -1,7 +1,6 @@
 package com.synergyforce.rashel.sundail;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -17,7 +16,7 @@ import android.widget.TextView;
 public class TimeEndActivity extends Activity {
 
     TextView tvSetStartTime, tvSetEndTime;
-    Button btnStartNewGlassClock;
+    Button btnStartNewGlassClock, btnViewPrevNotes;
 
     MySharedPreference mySharedPreference;
 
@@ -32,6 +31,7 @@ public class TimeEndActivity extends Activity {
         openMainActivityFromSleep();
         showStartAndEndTime();
         startNewGlassClock();
+        viewPreviousNotes();
 
     }
 
@@ -64,6 +64,17 @@ public class TimeEndActivity extends Activity {
                 mySharedPreference.clearSharedPreferenceData();
 
                 finish();
+            }
+        });
+    }
+
+    private void viewPreviousNotes(){
+        btnViewPrevNotes = (Button) findViewById(R.id.viewHistory);
+        btnViewPrevNotes.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TimeEndActivity.this, NoteHistoryActivity.class);
+                startActivity(intent);
             }
         });
     }

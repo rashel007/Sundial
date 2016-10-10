@@ -23,6 +23,9 @@
         <activity android:name=".TimeEndActivity"
             android:screenOrientation="portrait"/>
 
+        <activity android:name=".NoteHistoryActivity"
+                  android:screenOrientation="portrait"/>
+
         <receiver android:name=".SundialBroadcustReceiver"/>
     </application>
 

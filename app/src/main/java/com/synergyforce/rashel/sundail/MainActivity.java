@@ -33,7 +33,7 @@ public class MainActivity extends Activity {
     TextView tvSetHeaderAppName;
     Spinner spinnerSetTime;
     String stEndTime;
-    Button btnStartGlassClock;
+    Button btnStartGlassClock, btnViewPrevNotes;
     ProgressBar progressBar;
     ObjectAnimator animation;
 
@@ -49,6 +49,7 @@ public class MainActivity extends Activity {
         setMainScreenHeader();
         setEndTime();
         startButton();
+        viewPreviousNotes();
     }
 
     @Override
@@ -69,6 +70,17 @@ public class MainActivity extends Activity {
         tvSetHeaderAppName = (TextView) findViewById(R.id.tvHeader);
         Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/f_header.ttf");
         tvSetHeaderAppName.setTypeface(custom_font);
+    }
+
+    private void viewPreviousNotes(){
+        btnViewPrevNotes = (Button) findViewById(R.id.viewHistory);
+        btnViewPrevNotes.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, NoteHistoryActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     /**
