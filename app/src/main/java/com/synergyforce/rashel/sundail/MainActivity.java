@@ -37,11 +37,15 @@ public class MainActivity extends Activity {
     ProgressBar progressBar;
     ObjectAnimator animation;
 
+    MySharedPreference mySharedPreference;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mySharedPreference = new MySharedPreference(MainActivity.this);
         setMainScreenHeader();
         setEndTime();
         startButton();
@@ -54,7 +58,6 @@ public class MainActivity extends Activity {
             progressBar.clearAnimation();
             Constants.APP_CLOSED = true;
         }
-
     }
 
     /**
@@ -112,9 +115,11 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 //check if the glass clock is already started ot not
-                if(!Constants.ALARMMANAGER_STARTED) {
+                if(!mySharedPreference.getSPBooleanifAppStarted()) {
                     //setting the started time
                     Constants.START_TIME = Utils.getTheCurrentDateAndTime();
+                    //setting the start time in shared preference
+                    mySharedPreference.setStartTimeInSP();
                     //if glass clock is'nt started , then start the glass clock
                     startAlarmManager();
                     //starting the progress bar

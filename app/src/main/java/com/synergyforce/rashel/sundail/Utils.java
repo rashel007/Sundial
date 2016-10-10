@@ -1,16 +1,19 @@
 package com.synergyforce.rashel.sundail;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-import static com.synergyforce.rashel.sundail.Constants.APP_CLOSED;
 
 /**
  * @author Estique Ahmed Rashel
  */
 
 public class Utils {
+
 
     /**W
      * public function of Utils
@@ -35,4 +38,7 @@ public class Utils {
         Constants.ProgressBarDuration = 0;
         Constants.ProgressBarProgress = 0;
     }
+
+
+
 }

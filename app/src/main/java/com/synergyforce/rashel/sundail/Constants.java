@@ -19,5 +19,10 @@ public class Constants {
     static int ProgressBarProgress = 0;
     static int ProgressBarDuration = 0;
 
+    //Start time shared_preference
+    public static final String MyPREFERENCES = "MyPrefs" ;
+    public static final String SP_START_TIME = "startTime" ;
+    public static final String SP_ALARMMANAGER_STARTED = "alarmStarted" ;
+
 
 }

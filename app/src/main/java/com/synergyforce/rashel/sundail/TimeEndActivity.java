@@ -1,12 +1,14 @@
 package com.synergyforce.rashel.sundail;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
+
 
 /**
  * @author Estique Ahmed Rashel
@@ -17,12 +19,15 @@ public class TimeEndActivity extends Activity {
     TextView tvSetStartTime, tvSetEndTime;
     Button btnStartNewGlassClock;
 
+    MySharedPreference mySharedPreference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.time_end_layout);
 
+        mySharedPreference = new MySharedPreference(TimeEndActivity.this);
         //calling private functions
         openMainActivityFromSleep();
         showStartAndEndTime();
@@ -38,10 +43,14 @@ public class TimeEndActivity extends Activity {
         tvSetStartTime = (TextView) findViewById(R.id.started);
         tvSetEndTime = (TextView) findViewById(R.id.ends);
 
-        tvSetStartTime.setText(Constants.START_TIME);
+        tvSetStartTime.setText(mySharedPreference.getSetTimeFromSP());
         tvSetEndTime.setText(Constants.END_TIME);
     }
 
+    /**
+     * TimeEndActivity private function
+     * this will return to the main activity on button click
+     */
     private void startNewGlassClock(){
         btnStartNewGlassClock = (Button) findViewById(R.id.startNewGlassClock);
         btnStartNewGlassClock.setOnClickListener(new View.OnClickListener() {
@@ -52,6 +61,7 @@ public class TimeEndActivity extends Activity {
 
                 // settings the defaults values of start and end time
                 Utils.setDefaultsValues();
+                mySharedPreference.clearSharedPreferenceData();
 
                 finish();
             }
