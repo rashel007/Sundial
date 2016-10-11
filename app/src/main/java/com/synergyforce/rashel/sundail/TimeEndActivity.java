@@ -6,7 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
 
 
 /**
@@ -16,7 +19,8 @@ import android.widget.TextView;
 public class TimeEndActivity extends Activity {
 
     TextView tvSetStartTime, tvSetEndTime;
-    Button btnStartNewGlassClock, btnViewPrevNotes;
+    EditText etNote;
+    Button btnStartNewGlassClock, btnViewPrevNotes, btnSavaNote;
 
     MySharedPreference mySharedPreference;
     NoteHistoryActivity noteHistoryActivity;
@@ -36,7 +40,7 @@ public class TimeEndActivity extends Activity {
         startNewGlassClock();
         mySharedPreference.clearSharedPreferenceData();
         viewPreviousNotes();
-
+        saveNote();
     }
 
     /**
@@ -50,8 +54,26 @@ public class TimeEndActivity extends Activity {
         tvSetStartTime.setText(mySharedPreference.getSetTimeFromSP());
         tvSetEndTime.setText(Constants.END_TIME);
 
-        noteHistoryActivity.setRealmData(mySharedPreference.getSetTimeFromSP(),Constants.END_TIME,
-                "Testing comments");
+
+    }
+
+    private void saveNote(){
+        btnSavaNote = (Button) findViewById(R.id.saveNote);
+        btnSavaNote.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                etNote = (EditText) findViewById(R.id.etNote);
+                if(!etNote.getText().toString().isEmpty()) {
+                    noteHistoryActivity.setRealmData(tvSetStartTime.getText().toString(),
+                            tvSetEndTime.getText().toString(),
+                            etNote.getText().toString());
+
+                    Toast.makeText(TimeEndActivity.this, "New Note Saved", Toast.LENGTH_LONG).show();
+                }else{
+                    Toast.makeText(TimeEndActivity.this, "Please Make a note 1st", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
     /**

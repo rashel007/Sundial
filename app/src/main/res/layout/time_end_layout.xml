@@ -97,6 +97,28 @@
 
     </TableLayout>
 
+    <EditText
+        android:id="@+id/etNote"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/tlStartTime"
+        android:background="@color/textColor"
+        android:textColor="@color/mainBack"
+        android:padding="5dp"
+        android:hint="Make a Note"
+        android:layout_margin="5dp"
+        android:textSize="20sp"/>
+    <Button
+        android:id="@+id/saveNote"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/btn_back"
+        android:text="Save this GlassClock"
+        android:textColor="@color/textColor"
+        android:textSize="20sp"
+        android:layout_below="@id/etNote"
+        android:textStyle="bold"/>
+
     <Button
         android:id="@+id/startNewGlassClock"
         android:layout_width="match_parent"
@@ -105,7 +127,7 @@
         android:text="start new glassclock"
         android:textColor="@color/textColor"
         android:textSize="20sp"
-        android:layout_below="@id/tlStartTime"
+        android:layout_below="@id/saveNote"
         android:textStyle="bold"/>
 
     <Button
