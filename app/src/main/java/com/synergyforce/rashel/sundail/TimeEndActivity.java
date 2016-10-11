@@ -31,6 +31,7 @@ public class TimeEndActivity extends Activity {
         openMainActivityFromSleep();
         showStartAndEndTime();
         startNewGlassClock();
+        mySharedPreference.clearSharedPreferenceData();
         viewPreviousNotes();
 
     }
@@ -61,7 +62,6 @@ public class TimeEndActivity extends Activity {
 
                 // settings the defaults values of start and end time
                 Utils.setDefaultsValues();
-                mySharedPreference.clearSharedPreferenceData();
 
                 finish();
             }
