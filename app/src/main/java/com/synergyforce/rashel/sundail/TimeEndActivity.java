@@ -19,12 +19,15 @@ public class TimeEndActivity extends Activity {
     Button btnStartNewGlassClock, btnViewPrevNotes;
 
     MySharedPreference mySharedPreference;
+    NoteHistoryActivity noteHistoryActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.time_end_layout);
+
+        noteHistoryActivity = new NoteHistoryActivity();
 
         mySharedPreference = new MySharedPreference(TimeEndActivity.this);
         //calling private functions
@@ -46,6 +49,9 @@ public class TimeEndActivity extends Activity {
 
         tvSetStartTime.setText(mySharedPreference.getSetTimeFromSP());
         tvSetEndTime.setText(Constants.END_TIME);
+
+        noteHistoryActivity.setRealmData(mySharedPreference.getSetTimeFromSP(),Constants.END_TIME,
+                "Testing comments");
     }
 
     /**

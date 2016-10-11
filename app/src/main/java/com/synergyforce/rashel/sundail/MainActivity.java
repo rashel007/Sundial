@@ -46,6 +46,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         mySharedPreference = new MySharedPreference(MainActivity.this);
+        mySharedPreference.clearSharedPreferenceData();
         setMainScreenHeader();
         setEndTime();
         startButton();

@@ -12,7 +12,10 @@ import com.synergyforce.rashel.sundail.adapters.RealmNotesAdapter;
 import java.util.ArrayList;
 
 import io.realm.Realm;
+import io.realm.RealmObject;
 import io.realm.RealmResults;
+
+import static com.synergyforce.rashel.sundail.R.id.note;
 
 /**
  * @author Estique Ahmed Rashel
@@ -37,7 +40,7 @@ public class NoteHistoryActivity extends Activity {
 
         setupRecycler();
 
-        setRealmData();
+       // setRealmData();
 
         // refresh the realm instance
         RealmController.with(this).refresh();
@@ -70,49 +73,18 @@ public class NoteHistoryActivity extends Activity {
         recycler.setAdapter(adapter);
     }
 
-    public void setRealmData(){
-        ArrayList<HistoryModel> notes = new ArrayList<>();
+    public void setRealmData(String start, String end,String not) {
+        this.realm = RealmController.with(this).getRealm();
+        int key;
 
         HistoryModel note = new HistoryModel();
-        note.set_id(10);
-        note.set_startTime("Reto Meier 1");
-        note.set_endTime("Reto Meier");
-        note.set_note("http://api.androidhive.info/images/realm/1.png");
-        notes.add(note);
+        note.set_id(34);
+        note.set_startTime(start);
+        note.set_endTime(end);
+        note.set_note(not);
 
-        note = new HistoryModel();
-        note.set_id(20);
-        note.set_startTime("Reto Meier 2");
-        note.set_endTime("Reto Meier");
-        note.set_note("http://api.androidhive.info/images/realm/1.png");
-        notes.add(note);
-
-        note = new HistoryModel();
-        note.set_id(30);
-        note.set_startTime("Reto Meier 3");
-        note.set_endTime("Reto Meier");
-        note.set_note("http://api.androidhive.info/images/realm/1.png");
-        notes.add(note);
-
-        note = new HistoryModel();
-        note.set_id(40);
-        note.set_startTime("Reto Meier 4");
-        note.set_endTime("Reto Meier");
-        note.set_note("http://api.androidhive.info/images/realm/1.png");
-        notes.add(note);
-
-        note = new HistoryModel();
-        note.set_id(50);
-        note.set_startTime("Reto Meier 5");
-        note.set_endTime("Reto Meier");
-        note.set_note("http://api.androidhive.info/images/realm/1.png");
-        notes.add(note);
-
-        for (HistoryModel b : notes) {
-            // Persist your data easily
-            realm.beginTransaction();
-            realm.copyToRealmOrUpdate(b);
-            realm.commitTransaction();
-        }
+        realm.beginTransaction();
+        realm.copyToRealm(note);
+        realm.commitTransaction();
     }
 }
