@@ -96,7 +96,7 @@ public class MainActivity extends Activity {
 
         //time options in spinner end time
         List<String> time = new ArrayList<String>();
-        time.add("1");
+        time.add("5");
         time.add("10");
         time.add("15");
         time.add("20");
