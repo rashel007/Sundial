@@ -1,7 +1,9 @@
 package com.synergyforce.rashel.sundail;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -23,6 +25,7 @@ public class TimeEndActivity extends Activity {
     Button btnStartNewGlassClock, btnViewPrevNotes, btnSavaNote;
 
     MySharedPreference mySharedPreference;
+    SharedPreferences spID;
     NoteHistoryActivity noteHistoryActivity;
 
     @Override
@@ -58,16 +61,20 @@ public class TimeEndActivity extends Activity {
     }
 
     private void saveNote(){
+
+        spID = TimeEndActivity.this.getSharedPreferences(Constants.PRIMARY_KEY, Context.MODE_PRIVATE);
         btnSavaNote = (Button) findViewById(R.id.saveNote);
         btnSavaNote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 etNote = (EditText) findViewById(R.id.etNote);
                 if(!etNote.getText().toString().isEmpty()) {
-                    noteHistoryActivity.setRealmData(tvSetStartTime.getText().toString(),
+                    noteHistoryActivity.setRealmData(
+                            spID,
+                            tvSetStartTime.getText().toString(),
                             tvSetEndTime.getText().toString(),
                             etNote.getText().toString());
-
+                    btnSavaNote.setVisibility(View.GONE);
                     Toast.makeText(TimeEndActivity.this, "New Note Saved", Toast.LENGTH_LONG).show();
                 }else{
                     Toast.makeText(TimeEndActivity.this, "Please Make a note 1st", Toast.LENGTH_SHORT).show();

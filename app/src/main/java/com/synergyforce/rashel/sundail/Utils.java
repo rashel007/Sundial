@@ -1,5 +1,8 @@
 package com.synergyforce.rashel.sundail;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -10,7 +13,6 @@ import java.util.Calendar;
  */
 
 public class Utils {
-
 
     /**W
      * public function of Utils
