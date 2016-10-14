@@ -51,7 +51,7 @@ public class NoteHistoryActivity extends Activity {
 
             editorCheckFirst.putBoolean(Constants.App_First_Key, Constants.App_First_value);
             editorCheckFirst.commit();
-            Toast.makeText(this, "First: " +spCheckFirst.getBoolean(Constants.App_First_Key, false), Toast.LENGTH_SHORT).show();
+           // Toast.makeText(this, "First: " +spCheckFirst.getBoolean(Constants.App_First_Key, false), Toast.LENGTH_SHORT).show();
 
         }
 
