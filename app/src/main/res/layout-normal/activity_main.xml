@@ -107,6 +107,19 @@
         android:layout_below="@id/startGlassClock"
         android:textStyle="bold"/>
 
+    <TextView
+        android:id="@+id/tvTimer"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/viewHistory"
+        android:textSize="30sp"
+        android:text="00"
+        android:visibility="gone"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="@color/textColor"
+        />
+
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyleHorizontal"
@@ -114,7 +127,7 @@
         android:layout_height="150dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/viewHistory"
+        android:layout_below="@+id/tvTimer"
         android:progress="0"
         android:max="500"
         android:visibility="gone"

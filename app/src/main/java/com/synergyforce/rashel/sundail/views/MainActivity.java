@@ -9,6 +9,7 @@ import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.AdapterView;
@@ -19,10 +20,11 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.synergyforce.rashel.sundail.R;
 import com.synergyforce.rashel.sundail.extras.Constants;
 import com.synergyforce.rashel.sundail.extras.MySharedPreference;
-import com.synergyforce.rashel.sundail.R;
 import com.synergyforce.rashel.sundail.extras.SundialBroadcustReceiver;
+import com.synergyforce.rashel.sundail.extras.TimerService;
 import com.synergyforce.rashel.sundail.extras.Utils;
 
 import java.util.ArrayList;
@@ -31,12 +33,12 @@ import java.util.List;
 
 /**
  * @author Estique Ahmed Rashel
- * This in the Main && Opening Activity of Sundail App.
+ *         This in the Main && Opening Activity of Sundail App.
  */
 
 public class MainActivity extends Activity {
 
-    TextView tvSetHeaderAppName;
+    TextView tvSetHeaderAppName, tvTimer;
     Spinner spinnerSetTime;
     String stEndTime;
     Button btnStartGlassClock, btnViewPrevNotes;
@@ -64,9 +66,18 @@ public class MainActivity extends Activity {
     public void onBackPressed() {
         MainActivity.this.finish();
         if (!Constants.APP_CLOSED && Constants.ALARMMANAGER_STARTED) {
-            progressBar.clearAnimation();
+            if(progressBar != null) {
+                progressBar.clearAnimation();
+            }
             Constants.APP_CLOSED = true;
         }
+    }
+
+    private void setTimer() {
+        tvTimer = (TextView) findViewById(R.id.tvTimer);
+        tvTimer.setVisibility(View.VISIBLE);
+
+        tvTimer.setText(Constants.TIME_PASSED_SECCONDS);
     }
 
     /**
@@ -117,6 +128,7 @@ public class MainActivity extends Activity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 stEndTime = spinnerSetTime.getSelectedItem().toString();
+                Constants.SELECTED_END_TIME = stEndTime;
             }
 
             @Override
@@ -145,6 +157,10 @@ public class MainActivity extends Activity {
                     startAlarmManager();
                     //starting the progress bar
                     startProgressbar();
+                    Log.i("End Time: ", ""+Constants.SELECTED_END_TIME);
+                    //starting the forground service
+                    startService(new Intent(MainActivity.this, TimerService.class));
+                    Log.i("MainActivity: ", "Started service");
 
                     Constants.ALARMMANAGER_STARTED = true;
 

@@ -26,6 +26,9 @@
         <activity android:name=".views.NoteHistoryActivity"
                   android:screenOrientation="portrait"/>
 
+        <service android:name=".extras.TimerService"
+            android:exported="false"/>
+
         <receiver android:name=".extras.SundialBroadcustReceiver"/>
     </application>
 

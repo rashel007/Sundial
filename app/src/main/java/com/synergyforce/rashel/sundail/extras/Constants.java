@@ -12,6 +12,8 @@ import java.util.Date;
 public class Constants {
     public static String START_TIME = "";
     public static String END_TIME = "";
+    public static String TIME_PASSED_SECCONDS = "0";
+    public static String SELECTED_END_TIME = "0";
     public static boolean ALARMMANAGER_STARTED = false;
     public static boolean APP_CLOSED = false;
     public static boolean APP_STARTED_FIRST_TIME = false;
@@ -34,6 +36,8 @@ public class Constants {
     //shared preference value
     public static final int id_primary_key_value = 1;
     public static final boolean App_First_value = true;
+
+
 
 
 }
