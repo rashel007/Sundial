@@ -1,4 +1,4 @@
-package com.synergyforce.rashel.sundail;
+package com.synergyforce.rashel.sundail.extras;
 
 import android.content.Context;
 import android.content.SharedPreferences;

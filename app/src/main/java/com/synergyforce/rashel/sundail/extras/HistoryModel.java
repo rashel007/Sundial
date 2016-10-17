@@ -1,4 +1,4 @@
-package com.synergyforce.rashel.sundail;
+package com.synergyforce.rashel.sundail.extras;
 
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;

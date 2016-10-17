@@ -5,13 +5,13 @@
     <uses-permission android:name="android.permission.VIBRATE"/>
 
     <application
-        android:name=".MyApplication"
+        android:name=".extras.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_sundail"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity android:name=".MainActivity"
+        <activity android:name=".views.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,13 +20,13 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".TimeEndActivity"
+        <activity android:name=".views.TimeEndActivity"
             android:screenOrientation="portrait"/>
 
-        <activity android:name=".NoteHistoryActivity"
+        <activity android:name=".views.NoteHistoryActivity"
                   android:screenOrientation="portrait"/>
 
-        <receiver android:name=".SundialBroadcustReceiver"/>
+        <receiver android:name=".extras.SundialBroadcustReceiver"/>
     </application>
 
 </manifest>

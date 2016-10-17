@@ -1,4 +1,4 @@
-package com.synergyforce.rashel.sundail;
+package com.synergyforce.rashel.sundail.views;
 
 import android.app.Activity;
 import android.content.Context;
@@ -9,13 +9,17 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.widget.Toast;
 
+import com.synergyforce.rashel.sundail.extras.Constants;
+import com.synergyforce.rashel.sundail.extras.HistoryModel;
+import com.synergyforce.rashel.sundail.R;
+import com.synergyforce.rashel.sundail.extras.RealmController;
 import com.synergyforce.rashel.sundail.adapters.NotesAdapter;
 import com.synergyforce.rashel.sundail.adapters.RealmNotesAdapter;
 
 import io.realm.Realm;
 import io.realm.RealmResults;
 
-import static com.synergyforce.rashel.sundail.Constants.SP_Primary_key;
+import static com.synergyforce.rashel.sundail.extras.Constants.SP_Primary_key;
 
 /**
  * @author Estique Ahmed Rashel

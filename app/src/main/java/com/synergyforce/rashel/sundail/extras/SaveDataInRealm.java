@@ -1,7 +1,6 @@
-package com.synergyforce.rashel.sundail;
+package com.synergyforce.rashel.sundail.extras;
 
 import android.app.Activity;
-import android.content.Context;
 
 import io.realm.Realm;
 import io.realm.RealmObject;

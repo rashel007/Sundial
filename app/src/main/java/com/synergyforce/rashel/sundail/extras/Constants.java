@@ -1,4 +1,4 @@
-package com.synergyforce.rashel.sundail;
+package com.synergyforce.rashel.sundail.extras;
 
 import android.os.Vibrator;
 
@@ -10,16 +10,16 @@ import java.util.Date;
  */
 
 public class Constants {
-    static String START_TIME = "";
-    static String END_TIME = "";
-    static boolean ALARMMANAGER_STARTED = false;
-    static boolean APP_CLOSED = false;
-    static boolean APP_STARTED_FIRST_TIME = false;
-    static Vibrator v;
+    public static String START_TIME = "";
+    public static String END_TIME = "";
+    public static boolean ALARMMANAGER_STARTED = false;
+    public static boolean APP_CLOSED = false;
+    public static boolean APP_STARTED_FIRST_TIME = false;
+    public static Vibrator v;
 
-    static int ProgressBarProgress = 0;
-    static int ProgressBarDuration = 0;
-    static final int id_primary_key = 1;
+    public static int ProgressBarProgress = 0;
+    public static int ProgressBarDuration = 0;
+    public static final int id_primary_key = 1;
 
     // shared_preference name
     public static final String MyPREFERENCES = "MyPrefsNew" ;
@@ -32,8 +32,8 @@ public class Constants {
     public static final String SP_Primary_key = "idPrimaryKeyNew" ;
     public static final String App_First_Key = "firstRun" ;
     //shared preference value
-    static final int id_primary_key_value = 1;
-    static final boolean App_First_value = true;
+    public static final int id_primary_key_value = 1;
+    public static final boolean App_First_value = true;
 
 
 }

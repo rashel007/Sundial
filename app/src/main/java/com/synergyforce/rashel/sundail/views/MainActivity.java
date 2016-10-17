@@ -1,12 +1,10 @@
-package com.synergyforce.rashel.sundail;
+package com.synergyforce.rashel.sundail.views;
 
 import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
@@ -20,6 +18,12 @@ import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.synergyforce.rashel.sundail.extras.Constants;
+import com.synergyforce.rashel.sundail.extras.MySharedPreference;
+import com.synergyforce.rashel.sundail.R;
+import com.synergyforce.rashel.sundail.extras.SundialBroadcustReceiver;
+import com.synergyforce.rashel.sundail.extras.Utils;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -96,7 +100,7 @@ public class MainActivity extends Activity {
 
         //time options in spinner end time
         List<String> time = new ArrayList<String>();
-        time.add("5");
+        time.add("1");
         time.add("10");
         time.add("15");
         time.add("20");

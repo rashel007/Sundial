@@ -1,4 +1,4 @@
-package com.synergyforce.rashel.sundail;
+package com.synergyforce.rashel.sundail.extras;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -6,7 +6,10 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Vibrator;
 
-import static com.synergyforce.rashel.sundail.Constants.v;
+import com.synergyforce.rashel.sundail.R;
+import com.synergyforce.rashel.sundail.views.TimeEndActivity;
+
+import static com.synergyforce.rashel.sundail.extras.Constants.v;
 
 /**
  * @author Estique Ahmed Rashel

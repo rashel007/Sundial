@@ -1,7 +1,4 @@
-package com.synergyforce.rashel.sundail;
-
-import android.content.Context;
-import android.content.SharedPreferences;
+package com.synergyforce.rashel.sundail.extras;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

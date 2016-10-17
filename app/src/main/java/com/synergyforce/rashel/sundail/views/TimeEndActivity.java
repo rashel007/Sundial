@@ -1,4 +1,4 @@
-package com.synergyforce.rashel.sundail;
+package com.synergyforce.rashel.sundail.views;
 
 import android.app.Activity;
 import android.content.Context;
@@ -12,6 +12,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.synergyforce.rashel.sundail.extras.Constants;
+import com.synergyforce.rashel.sundail.extras.MySharedPreference;
+import com.synergyforce.rashel.sundail.R;
+import com.synergyforce.rashel.sundail.extras.SundialBroadcustReceiver;
+import com.synergyforce.rashel.sundail.extras.Utils;
 
 
 /**

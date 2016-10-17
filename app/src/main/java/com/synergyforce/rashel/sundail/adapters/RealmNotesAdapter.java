@@ -2,7 +2,7 @@ package com.synergyforce.rashel.sundail.adapters;
 
 import android.content.Context;
 
-import com.synergyforce.rashel.sundail.HistoryModel;
+import com.synergyforce.rashel.sundail.extras.HistoryModel;
 
 import io.realm.RealmResults;
 
