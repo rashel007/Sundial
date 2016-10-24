@@ -8,7 +8,7 @@ import io.realm.Realm;
 import io.realm.RealmResults;
 
 /**
- * Created by Rashel on 10/10/2016.
+ * @author Estique Ahmed Rashel
  */
 
 public class RealmController {
@@ -16,7 +16,7 @@ public class RealmController {
     private static RealmController instance;
     private final Realm realm;
 
-    public RealmController(Application application) {
+    private RealmController(Application application) {
         realm = Realm.getDefaultInstance();
     }
 

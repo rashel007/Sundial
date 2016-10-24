@@ -38,14 +38,14 @@ import java.util.List;
 
 public class MainActivity extends Activity {
 
-    TextView tvSetHeaderAppName, tvTimer;
-    Spinner spinnerSetTime;
-    String stEndTime;
-    Button btnStartGlassClock, btnViewPrevNotes;
-    ProgressBar progressBar;
-    ObjectAnimator animation;
+    private TextView tvSetHeaderAppName, tvTimer;
+    private Spinner spinnerSetTime;
+    private String stEndTime;
+    private Button btnStartGlassClock, btnViewPrevNotes;
+    private ProgressBar progressBar;
+    private ObjectAnimator animation;
 
-    MySharedPreference mySharedPreference;
+    private MySharedPreference mySharedPreference;
 
 
     @Override
@@ -110,7 +110,7 @@ public class MainActivity extends Activity {
         spinnerSetTime = (Spinner) findViewById(R.id.spinnerEndTime);
 
         //time options in spinner end time
-        List<String> time = new ArrayList<String>();
+        List<String> time = new ArrayList<>();
         time.add("1");
         time.add("10");
         time.add("15");

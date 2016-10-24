@@ -25,13 +25,13 @@ import com.synergyforce.rashel.sundail.extras.Utils;
 
 public class TimeEndActivity extends Activity {
 
-    TextView tvSetStartTime, tvSetEndTime;
-    EditText etNote;
-    Button btnStartNewGlassClock, btnViewPrevNotes, btnSavaNote;
+    private TextView tvSetStartTime, tvSetEndTime;
+    private EditText etNote;
+    private Button btnStartNewGlassClock, btnViewPrevNotes, btnSavaNote;
 
-    MySharedPreference mySharedPreference;
-    SharedPreferences spID;
-    NoteHistoryActivity noteHistoryActivity;
+    private MySharedPreference mySharedPreference;
+    private SharedPreferences spID;
+    private NoteHistoryActivity noteHistoryActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

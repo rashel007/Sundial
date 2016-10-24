@@ -22,8 +22,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="25dp"
                 android:layout_column="1"
-                android:text="Started At : "
-                android:textColor="@color/mainBack"
+                android:text="@string/started_at"
+                android:textColor="@color/textColor"
                 android:textSize="15sp"
                 android:textStyle="bold"/>
 
@@ -33,7 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="25dp"
                 android:layout_column="1"
-                android:textColor="@color/mainBack"
+                android:textColor="@color/textColor"
                 android:textSize="15sp"/>
 
         </TableRow>
@@ -49,8 +49,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="25dp"
                 android:layout_column="1"
-                android:text="Ends At : "
-                android:textColor="@color/mainBack"
+                android:text="@string/ends_at"
+                android:textColor="@color/textColor"
                 android:textSize="15sp"
                 android:textStyle="bold"/>
 
@@ -60,7 +60,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="25dp"
                 android:layout_column="1"
-                android:textColor="@color/mainBack"
+                android:textColor="@color/textColor"
                 android:textSize="15sp"/>
 
         </TableRow>
@@ -75,8 +75,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="25dp"
                 android:layout_column="1"
-                android:text="NOTE: "
-                android:textColor="@color/mainBack"
+                android:text="@string/note"
+                android:textColor="@color/textColor"
                 android:textSize="15sp"
                 android:textStyle="bold"/>
 
@@ -86,9 +86,8 @@
                 android:layout_height="25dp"
                 android:layout_column="1"
                 android:ellipsize="end"
-                android:maxLength="15"
-                android:maxLines="1"
-                android:textColor="@color/mainBack"
+                android:maxLines="2"
+                android:textColor="@color/textColor"
                 android:textSize="15sp"
                 android:textStyle="bold"/>
 

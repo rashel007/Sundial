@@ -5,9 +5,8 @@ import android.content.Context;
 import com.synergyforce.rashel.sundail.extras.HistoryModel;
 
 import io.realm.RealmResults;
-
 /**
- * Created by Rashel on 10/10/2016.
+ * @author Estique Ahmed Rashel
  */
 
 public class RealmNotesAdapter  extends RealmModelAdapter<HistoryModel>{

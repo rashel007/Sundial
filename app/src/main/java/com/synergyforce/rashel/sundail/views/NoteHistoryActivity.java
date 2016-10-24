@@ -31,10 +31,10 @@ public class NoteHistoryActivity extends Activity {
     private Realm realm;
     private LayoutInflater inflater;
     private RecyclerView recycler;
-    int id;
+    private int id;
 
-    SharedPreferences sharedpreferences, spCheckFirst;
-    SharedPreferences.Editor editor, editorCheckFirst;
+    private SharedPreferences sharedpreferences, spCheckFirst;
+    private SharedPreferences.Editor editor, editorCheckFirst;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +47,7 @@ public class NoteHistoryActivity extends Activity {
 
         Toast.makeText(this, "Long Press To Delete Note" , Toast.LENGTH_LONG).show();
 
-        if(spCheckFirst.getBoolean(Constants.App_First_Key, false ) == false){
+        if(!spCheckFirst.getBoolean(Constants.App_First_Key, false)){
             sharedpreferences = NoteHistoryActivity.this.getSharedPreferences(Constants.PRIMARY_KEY, Context.MODE_PRIVATE);
             editor = sharedpreferences.edit();
             editor.putInt(SP_Primary_key, Constants.id_primary_key_value);
@@ -77,7 +77,7 @@ public class NoteHistoryActivity extends Activity {
         setRealmAdapter(RealmController.with(this).getNoteHistories());
     }
 
-    public void setRealmAdapter(RealmResults<HistoryModel> books) {
+    private void setRealmAdapter(RealmResults<HistoryModel> books) {
 
         RealmNotesAdapter realmAdapter = new RealmNotesAdapter(this.getApplicationContext(), books, true);
         // Set the data and tell the RecyclerView to draw

@@ -4,7 +4,7 @@ import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 
 /**
- * Created by Rashel on 10/10/2016.
+ * @author Estique Ahmed Rashel
  */
 
 public class HistoryModel extends RealmObject {

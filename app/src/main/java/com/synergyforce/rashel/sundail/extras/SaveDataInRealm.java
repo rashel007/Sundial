@@ -6,15 +6,15 @@ import io.realm.Realm;
 import io.realm.RealmObject;
 
 /**
- * Created by Rashel on 10/11/2016.
+ * @author Estique Ahmed Rashel
  */
 
 public class SaveDataInRealm {
 
-    private Realm realm;
-    private String stStartTime;
-    private String stEndTime;
-    private String stNote;
+    private final Realm realm;
+    private final String stStartTime;
+    private final String stEndTime;
+    private final String stNote;
 
     public SaveDataInRealm(Activity activity, String start, String end,String note){
         realm = RealmController.with(activity).getRealm();

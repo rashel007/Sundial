@@ -21,10 +21,10 @@ public class TimerService extends Service {
 
     private final static String TAG = "TimerService";
 
-    public static final String COUNTDOWN_BR = "com.synergyforce.rashel.sundail.views.MainActivity";
-    Intent mIntent = new Intent(COUNTDOWN_BR);
+    private static final String COUNTDOWN_BR = "com.synergyforce.rashel.sundail.views.MainActivity";
+    private final Intent mIntent = new Intent(COUNTDOWN_BR);
 
-    CountDownTimer cdt = null;
+    private CountDownTimer cdt = null;
     private static boolean started = false;
 
     @Override

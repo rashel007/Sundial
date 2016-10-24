@@ -6,7 +6,7 @@ import io.realm.RealmBaseAdapter;
 import io.realm.RealmObject;
 
 /**
- * Created by Rashel on 10/10/2016.
+ * @author Estique Ahmed Rashel
  */
 
 public abstract class RealmRecyclerViewAdapater <T extends RealmObject> extends RecyclerView.Adapter {

@@ -4,7 +4,7 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/mainBack">
+   >
 
     <TextView
         android:id="@+id/tvHeader"
@@ -45,7 +45,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
                 android:layout_column="1"
-                android:text="Start: "
+                android:text="@string/start"
                 android:textColor="@color/textColor"
                 android:textSize="40sp"
                 android:textStyle="bold"/>
@@ -54,7 +54,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
                 android:layout_column="1"
-                android:text="Current Time"
+                android:text="@string/current_time"
                 android:textColor="@color/textColor"
                 android:textSize="40sp"/>
 
@@ -70,7 +70,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
                 android:layout_column="1"
-                android:text="End : "
+                android:text="@string/end"
                 android:textColor="@color/textColor"
                 android:textSize="40sp"
                 android:textStyle="bold"/>
@@ -80,6 +80,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="65dp"
                 android:layout_column="1"
+                android:spinnerMode="dropdown"
                />
 
         </TableRow>
@@ -91,7 +92,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@drawable/btn_back"
-        android:text="start glassclock"
+        android:text="@string/start_glassclock"
         android:textColor="@color/textColor"
         android:textSize="40sp"
         android:layout_below="@id/tlStartTime"
@@ -101,7 +102,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@drawable/btn_back"
-        android:text="View Previous Notes"
+        android:text="@string/view_previous_notes"
         android:textColor="@color/textColor"
         android:textSize="40sp"
         android:layout_below="@id/startGlassClock"

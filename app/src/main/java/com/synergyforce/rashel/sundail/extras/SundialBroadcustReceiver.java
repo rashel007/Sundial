@@ -18,7 +18,7 @@ import static com.synergyforce.rashel.sundail.extras.Constants.v;
 public class SundialBroadcustReceiver extends BroadcastReceiver {
 
     public static final String WAKE = "Wake up";
-    MediaPlayer mp;
+    private MediaPlayer mp;
     @Override
     public void onReceive(Context context, Intent intent) {
 

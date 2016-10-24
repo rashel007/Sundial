@@ -2,8 +2,6 @@ package com.synergyforce.rashel.sundail.extras;
 
 import android.os.Vibrator;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * @author Estique Ahmed Rashel
@@ -16,12 +14,10 @@ public class Constants {
     public static String SELECTED_END_TIME = "0";
     public static boolean ALARMMANAGER_STARTED = false;
     public static boolean APP_CLOSED = false;
-    public static boolean APP_STARTED_FIRST_TIME = false;
     public static Vibrator v;
 
     public static int ProgressBarProgress = 0;
     public static int ProgressBarDuration = 0;
-    public static final int id_primary_key = 1;
 
     // shared_preference name
     public static final String MyPREFERENCES = "MyPrefsNew" ;

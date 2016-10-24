@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="@color/mainBack">
+             >
 
     <TextView
         android:id="@+id/tvHeader"
@@ -29,7 +29,7 @@
         android:id="@+id/tvTimeEnds"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:text="Time Ends"
+        android:text="@string/time_ends"
         android:textColor="#F44336"
         android:textStyle="bold|italic"
         android:textSize="55sp"
@@ -55,7 +55,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
                 android:layout_column="1"
-                android:text="Started At: "
+                android:text="@string/started_at"
                 android:textColor="@color/textColor"
                 android:textSize="40sp"
                 android:textStyle="bold"/>
@@ -80,7 +80,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
                 android:layout_column="1"
-                android:text="Ends At : "
+                android:text="@string/ends_at"
                 android:textColor="@color/textColor"
                 android:textSize="40sp"
                 android:textStyle="bold"/>
@@ -105,7 +105,7 @@
         android:background="@color/textColor"
         android:textColor="@color/mainBack"
         android:padding="8dp"
-        android:hint="Make a Note"
+        android:hint="@string/make_a_note"
         android:layout_margin="5dp"
         android:textSize="40sp"/>
     <Button
@@ -113,7 +113,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@drawable/btn_back"
-        android:text="Save this GlassClock"
+        android:text="@string/save_this_glassclock"
         android:textColor="@color/textColor"
         android:textSize="40sp"
         android:layout_below="@id/etNote"
@@ -124,7 +124,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@drawable/btn_back"
-        android:text="start new glassclock"
+        android:text="@string/start_new_glassclock"
         android:textColor="@color/textColor"
         android:textSize="40sp"
         android:layout_below="@id/saveNote"
@@ -135,7 +135,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@drawable/btn_back"
-        android:text="View Previous Notes"
+        android:text="@string/view_history"
         android:textColor="@color/textColor"
         android:textSize="40sp"
         android:layout_below="@id/startNewGlassClock"

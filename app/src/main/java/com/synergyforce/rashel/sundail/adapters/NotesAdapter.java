@@ -22,7 +22,7 @@ import io.realm.RealmResults;
 
 public class NotesAdapter extends RealmRecyclerViewAdapater<HistoryModel>  {
 
-    final Context context;
+    private final Context context;
     private Realm realm;
     private LayoutInflater inflater;
 
@@ -67,9 +67,9 @@ public class NotesAdapter extends RealmRecyclerViewAdapater<HistoryModel>  {
                 results.remove(position);
                 realm.commitTransaction();
 
-                if (results.size() == 0) {
-                   // Prefs.with(context).setPreLoad(false);
-                }
+//                if (results.size() == 0) {
+//                   // Prefs.with(context).setPreLoad(false);
+//                }
 
                 notifyDataSetChanged();
 
@@ -92,10 +92,10 @@ public class NotesAdapter extends RealmRecyclerViewAdapater<HistoryModel>  {
 
     public static class CardViewHolder extends RecyclerView.ViewHolder {
 
-        public CardView card;
-        public TextView tvStartTime;
-        public TextView tvEndTime;
-        public TextView tvNote;
+        public final CardView card;
+        public final TextView tvStartTime;
+        public final TextView tvEndTime;
+        public final TextView tvNote;
 
         public CardViewHolder(View itemView) {
             // standard view holder pattern with Butterknife view injection

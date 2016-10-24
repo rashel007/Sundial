@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Glass Clock</string>
+    <string name="started_at">Started At :</string>
+    <string name="time_ends">Time Ends</string>
+    <string name="start">Start:</string>
+    <string name="ends_at">Ends At :</string>
+    <string name="current_time">Current Time</string>
+    <string name="end">End :</string>
+    <string name="note">NOTE:</string>
+    <string name="start_glassclock">start glassclock</string>
+    <string name="view_previous_notes">View Previous Notes</string>
+    <string name="make_a_note">Make a Note</string>
+    <string name="_00">00</string>
+    <string name="save_this_glassclock">Save this GlassClock</string>
+    <string name="start_new_glassclock">Start New GlassClock</string>
+    <string name="view_history">View History</string>
 </resources>
